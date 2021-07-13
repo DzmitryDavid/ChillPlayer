@@ -5,7 +5,7 @@ import './Song.scss';
 const Song = ({currentSong}) => {
     return (
         <div className="song-container">
-            <img src={currentSong.cover} alt=""/>
+            <img src={currentSong.cover} alt="cover"/>
             <h2>{currentSong.name}</h2>
             <h3>{currentSong.artist}</h3>
         </div>

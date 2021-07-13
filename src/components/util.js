@@ -4,21 +4,30 @@ const chillHop = () => {
     return (
         [
             {
-                name: "Cascade",
-                artist: "Knowmadic",
-                cover: "https://chillhop.com/wp-content/uploads/2021/02/70a56749b8b89815fa75446030c6ba57d2c34de7-1024x1024.jpg",
+                name: "railway pulse",
+                artist: "Mommy, Sleepy Fish",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/2473c60e471fe9b40e246bf7711c87d3d6ea69a7-300x300.jpg",
                 id: uuidv4(),
                 active: true,
+                audio: "https://mp3.chillhop.com/serve.php/?mp3=15088"
+            },
+            {
+                name: "Cascade",
+                artist: "Knowmadic",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/732128e1da8fd5f6292ffc1926a2ea840a54f4d0-300x300.jpg",
+                id: uuidv4(),
+                active: false,
                 audio: "https://mp3.chillhop.com/serve.php/?mp3=13091"
             },
             {
                 name: "Sunrise Hike",
                 artist: "Ruck P",
-                cover: "https://chillhop.com/wp-content/uploads/2021/02/70a56749b8b89815fa75446030c6ba57d2c34de7-1024x1024.jpg",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/732128e1da8fd5f6292ffc1926a2ea840a54f4d0-300x300.jpg",
                 id: uuidv4(),
                 active: false,
                 audio: "https://mp3.chillhop.com/serve.php/?mp3=12133"
-            }
+            },
+            
         ]
     );
 };
