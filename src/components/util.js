@@ -27,6 +27,38 @@ const chillHop = () => {
                 active: false,
                 audio: "https://mp3.chillhop.com/serve.php/?mp3=12133"
             },
+            {
+                name: "Sunrise Hike",
+                artist: "Ruck P",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/732128e1da8fd5f6292ffc1926a2ea840a54f4d0-300x300.jpg",
+                id: uuidv4(),
+                active: false,
+                audio: "https://mp3.chillhop.com/serve.php/?mp3=12133"
+            },
+            {
+                name: "Sunrise Hike",
+                artist: "Ruck P",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/732128e1da8fd5f6292ffc1926a2ea840a54f4d0-300x300.jpg",
+                id: uuidv4(),
+                active: false,
+                audio: "https://mp3.chillhop.com/serve.php/?mp3=12133"
+            },
+            {
+                name: "Sunrise Hike",
+                artist: "Ruck P",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/732128e1da8fd5f6292ffc1926a2ea840a54f4d0-300x300.jpg",
+                id: uuidv4(),
+                active: false,
+                audio: "https://mp3.chillhop.com/serve.php/?mp3=12133"
+            },
+            {
+                name: "Sunrise Hike",
+                artist: "Ruck P",
+                cover: "https://chillhop.com/wp-content/uploads/2021/05/732128e1da8fd5f6292ffc1926a2ea840a54f4d0-300x300.jpg",
+                id: uuidv4(),
+                active: false,
+                audio: "https://mp3.chillhop.com/serve.php/?mp3=12133"
+            },
             
         ]
     );
