@@ -6,7 +6,6 @@ import {
   faAngleRight,
   faPause,
 } from '@fortawesome/free-solid-svg-icons';
-import { playAudio } from '../utils';
 import './Player.scss';
 
 const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, songs, setSongs }) => {
@@ -29,20 +28,21 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
       -2
     )}`;
   };
-  const skipTrackHandler = (action) => {
+  const skipTrackHandler = async (action) => {
     const currentIndex = songs.findIndex((track) => track.id === currentSong.id);
     
     if(action === 'skip-forward') {
-      setCurrentSong(songs[(currentIndex + 1) % songs.length])
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length])
     }
     if(action === 'skip-back') {
       if((currentIndex - 1 % songs.length) === -1) {
-        setCurrentSong(songs[songs.length - 1])
+        await setCurrentSong(songs[songs.length - 1])
+        if(isPlaying) { audioRef.current.play() }
         return;
       }
-      setCurrentSong(songs[(currentIndex - 1) % songs.length])
+      await setCurrentSong(songs[(currentIndex - 1) % songs.length])
     }
-    playAudio(audioRef, isPlaying)
+    if(isPlaying) { audioRef.current.play() }
   }
   
   useEffect(() => {

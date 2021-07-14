@@ -27,6 +27,13 @@ const App = () => {
     const  animationPercentage = Math.round((roundCurrent / roundDuration) * 100);
     setSongInfo({ ...songInfo, currentTime: current, duration, animationPercentage });
   };
+
+  const songEndHandler = async () => {
+    let currentIndex = songs.findIndex((track) => track.id === currentSong.id);
+    await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    if(isPlaying) {audioRef.current.play()}
+  }
+
   return (
     <div>
       <Nav
@@ -55,6 +62,7 @@ const App = () => {
           songs={songs}/>
 
         <audio
+            onEnded={songEndHandler}
             onTimeUpdate={timeUpdateHandler}
             onLoadedMetadata={timeUpdateHandler}
             ref={audioRef}
