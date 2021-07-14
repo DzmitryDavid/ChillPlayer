@@ -1,14 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { playAudio } from '../../utils'; 
 import './LibrarySong.scss';
 
 const LibrarySong = ({ songs, song, setCurrentSong, audioRef, isPlaying, setSong }) => {
 
-  const  selectSongHandler = async () => {
-    await setCurrentSong(song);
-    
-    if(isPlaying) {
-      audioRef.current.play()
-    }
+  const  selectSongHandler =  () => {
+    setCurrentSong(song);
     const newSetSong = songs.map((track) => {
       if(track.id === song.id) {
         return {...track, active: true}
@@ -19,10 +16,12 @@ const LibrarySong = ({ songs, song, setCurrentSong, audioRef, isPlaying, setSong
       }
     } );
     setSong(newSetSong);
+    
+    playAudio(audioRef, isPlaying)
   }
+
   return (
     <div onClick={selectSongHandler} className={`library-song ${song.active ? 'selected' : ''} `}>
-
       <img src={song.cover} alt="cover"/>
         <div className="song-description">
             <h3>{song.name}</h3>

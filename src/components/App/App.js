@@ -8,12 +8,13 @@ import './App.scss';
 
 
 const App = () => {
-  const [songs, setSong] = useState(data());
+  const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
+    animationPercentage: 0
   });
   const [libraryStatus, setLibraryStatus] = useState(false)
   const audioRef = useRef(null);
@@ -21,7 +22,10 @@ const App = () => {
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
-    setSongInfo({ ...songInfo, currentTime: current, duration });
+    const roundCurrent = Math.round(current);
+    const roundDuration = Math.round(duration);
+    const  animationPercentage = Math.round((roundCurrent / roundDuration) * 100);
+    setSongInfo({ ...songInfo, currentTime: current, duration, animationPercentage });
   };
   return (
     <div>
@@ -32,18 +36,18 @@ const App = () => {
       <Player
 
         songInfo={songInfo} 
-        setSong={setSongInfo}
+        setSongInfo={setSongInfo}
         audioRef={audioRef}
         setIsPlaying={setIsPlaying}
         isPlaying={isPlaying}
         currentSong={currentSong}
         setCurrentSong={setCurrentSong}
-        setSongs={setSong}
+        setSongs={setSongs}
         songs={songs}/>
 
         <Library 
           libraryStatus={libraryStatus}
-          setSong={setSong}
+          setSong={setSongs}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
           audioRef={audioRef}

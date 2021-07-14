@@ -6,13 +6,13 @@ import {
   faAngleRight,
   faPause,
 } from '@fortawesome/free-solid-svg-icons';
+import { playAudio } from '../utils';
 import './Player.scss';
 
 const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef, songInfo, setSongInfo, songs, setSongs }) => {
   const playSongHandler = () => {
     if (isPlaying) {
       audioRef.current.pause();
-      console.log(isPlaying);
       setIsPlaying(!isPlaying);
     } else {
       audioRef.current.play();
@@ -42,8 +42,9 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
       }
       setCurrentSong(songs[(currentIndex - 1) % songs.length])
     }
-    
+    playAudio(audioRef, isPlaying)
   }
+  
   useEffect(() => {
     const newSetSong = songs.map((track) => {
       if(track.id === currentSong.id) {
@@ -57,10 +58,15 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
       setSongs(newSetSong)
   }, [currentSong])
 
+  const trackAnimation ={transform: `translateX(${songInfo.animationPercentage}%)`} 
+
   return (
     <div className="player">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
+        <div
+          style={{background: `linear-gradient(to right, ${currentSong.color[0]},${currentSong.color[1]})`}}
+          className="track">
         <input
           type="range"
           min={0}
@@ -68,7 +74,9 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
           value={songInfo.currentTime }
           onChange={dragHandler}
         />
-        <p>{getTime(songInfo.duration)}</p>
+        <div style={trackAnimation} className="animate-track"></div>
+        </div>
+        <p>{songInfo.duration ? getTime(songInfo.duration): '0:00'}</p> 
       </div>
       <div className="play-control">
 
@@ -92,8 +100,6 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
           icon={faAngleRight}
         />
       </div>
-
-      
     </div>
   );
 };

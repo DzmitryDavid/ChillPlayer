@@ -9,6 +9,7 @@ const chillHop = () => {
                 cover: "https://chillhop.com/wp-content/uploads/2021/05/2473c60e471fe9b40e246bf7711c87d3d6ea69a7-300x300.jpg",
                 id: uuidv4(),
                 active: true,
+                color: ['#EB7B76', '#C68C8D'],
                 audio: "https://mp3.chillhop.com/serve.php/?mp3=15088"
             },
             {
