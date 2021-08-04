@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ChillPlayer/static/css/main.a65f0f08.chunk.css",
+    "main.js": "/ChillPlayer/static/js/main.7bb0f614.chunk.js",
+    "main.js.map": "/ChillPlayer/static/js/main.7bb0f614.chunk.js.map",
+    "runtime-main.js": "/ChillPlayer/static/js/runtime-main.62bab510.js",
+    "runtime-main.js.map": "/ChillPlayer/static/js/runtime-main.62bab510.js.map",
+    "static/js/2.85a5152f.chunk.js": "/ChillPlayer/static/js/2.85a5152f.chunk.js",
+    "static/js/2.85a5152f.chunk.js.map": "/ChillPlayer/static/js/2.85a5152f.chunk.js.map",
+    "index.html": "/ChillPlayer/index.html",
+    "static/css/main.a65f0f08.chunk.css.map": "/ChillPlayer/static/css/main.a65f0f08.chunk.css.map",
+    "static/js/2.85a5152f.chunk.js.LICENSE.txt": "/ChillPlayer/static/js/2.85a5152f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.62bab510.js",
+    "static/js/2.85a5152f.chunk.js",
+    "static/css/main.a65f0f08.chunk.css",
+    "static/js/main.7bb0f614.chunk.js"
+  ]
+}
