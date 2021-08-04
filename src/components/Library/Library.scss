@@ -16,8 +16,8 @@
     padding: 1rem 2rem;
     font-weight: 700;
     text-decoration: none;
+    font-size: 2rem;
     text-transform: capitalize;
-    color: #000;
   }
   &-song {
     display: flex;
@@ -25,12 +25,13 @@
     align-items: center;
     margin-bottom: 30px;
     transition: ease 0.3s background;
+    border-radius: 4px;
     img {
       margin-bottom: 10px;
       width: 30%;
     }
     &:hover {
-      background-color: rgb(222,222,255);
+      background-color: rgb(222, 222, 255);
 
       cursor: pointer;
     }
@@ -74,5 +75,4 @@
   .library {
     width: 100%;
   }
-  
 }
