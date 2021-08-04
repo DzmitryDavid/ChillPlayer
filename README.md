@@ -5,8 +5,7 @@ In this small application, I studied working with state, props and access to DOM
 ## ▶️ Demo
 
 Here you can find the demo link:
-- [gh-pages]()
-
+- [GitHub-pages](https://dzmitrydavid.github.io/ChillPlayer/)
 
 ## ✨ Features
 
