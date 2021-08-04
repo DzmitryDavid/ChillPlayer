@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: space-around;
   button {
+    span {
+      padding-right: 0.4rem
+    }
     border: none;
     background: transparent;
     transition: all 0.3s ease;

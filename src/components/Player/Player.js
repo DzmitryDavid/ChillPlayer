@@ -35,7 +35,7 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
   const getTime = (time) => {
-    return `${Math.floor(time / 60)} : ${('0' + Math.floor(time % 60)).slice(
+    return `${Math.floor(time / 60)}:${('0' + Math.floor(time % 60)).slice(
       -2
     )}`;
   };
