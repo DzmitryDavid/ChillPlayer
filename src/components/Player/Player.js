@@ -1,4 +1,4 @@
-import React, {useEffect}  from 'react';
+import React  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlay,
@@ -18,7 +18,18 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
       setIsPlaying(!isPlaying);
     }
   };
-  
+  const activeLibraryHandler = (nextPrev) => {
+    const newSetSong = songs.map((track) => {
+      if(track.id === nextPrev.id) {
+        return {...track, active: true}
+      } else {
+        return {
+          ...track, active: false
+        }
+      }
+    });
+      setSongs(newSetSong)
+  }
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
@@ -32,31 +43,22 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying, audioRef
     const currentIndex = songs.findIndex((track) => track.id === currentSong.id);
     
     if(action === 'skip-forward') {
-      await setCurrentSong(songs[(currentIndex + 1) % songs.length])
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex + 1) % songs.length])
     }
     if(action === 'skip-back') {
       if((currentIndex - 1 % songs.length) === -1) {
         await setCurrentSong(songs[songs.length - 1])
+        activeLibraryHandler(songs[songs.length - 1])
         if(isPlaying) { audioRef.current.play() }
         return;
       }
       await setCurrentSong(songs[(currentIndex - 1) % songs.length])
+      activeLibraryHandler(songs[(currentIndex - 1) % songs.length])
     }
     if(isPlaying) { audioRef.current.play() }
   }
   
-  useEffect(() => {
-    const newSetSong = songs.map((track) => {
-      if(track.id === currentSong.id) {
-        return {...track, active: true}
-      } else {
-        return {
-          ...track, active: false
-        }
-      }
-    });
-      setSongs(newSetSong)
-  }, [currentSong])
 
   const trackAnimation ={transform: `translateX(${songInfo.animationPercentage}%)`} 
 

@@ -11,7 +11,7 @@ const Nav = ({libraryStatus, setLibraryStatus}) => {
   
   return (
     <nav className="nav">
-      <h1>Waves</h1>
+      <h1>Chill Player</h1>
       <button onClick={libraryStatusHandler}>
         Library
         <FontAwesomeIcon icon={faMusic}/>

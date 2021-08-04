@@ -14,7 +14,7 @@
   &-title {
     letter-spacing: 2px;
     margin: 1rem 1rem;
-    text-align: center;
+    
     font-weight: 700;
     text-decoration: underline;
     text-transform: uppercase;
@@ -24,12 +24,14 @@
     text-transform: capitalize;
     align-items: center;
     margin-bottom: 30px;
+    transition: ease 0.3s background;
     img {
       margin-bottom: 10px;
       width: 30%;
     }
     &:hover {
-      background-color: rgba(155, 155, 155, 0.12);
+      background-color: rgb(222,222,255);
+
       cursor: pointer;
     }
   }
@@ -66,4 +68,11 @@
 .active-library {
   transform: translateX(0%);
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+  
 }

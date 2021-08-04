@@ -35,7 +35,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className={`App ${libraryStatus ? 'library-active' : ''}`}>
       <Nav
         setLibraryStatus={setLibraryStatus}
         libraryStatus={libraryStatus}/>

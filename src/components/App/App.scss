@@ -15,3 +15,10 @@ h3,h4 {
   font-weight: 400;
   color: rgb(100, 100, 100);
 }
+.App {
+  transition: all ease 0.5s;
+}
+
+.library-active {
+  margin-left: 30%;
+}
